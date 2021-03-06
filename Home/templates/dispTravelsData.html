@@ -1,4 +1,4 @@
-{% extends "SearchResults.html" %}
+{% extends 'SearchResults.html' %}
 
 {% block content %}
 
@@ -8,11 +8,11 @@
     <th>Price</th>
     <th>Arrival</th>
   </tr>
-       {% for country in DBdata %}
+       {% for value in dbData %}
   <tr>
-    <td>{{origin}}</td>
-    <td>{{country.0}}£</td>
-    <td>{{country.1}}</td>
+    <td>{{value.origin}}</td>
+    <td>{{value.price}}£</td>
+    <td>{{value.destination}}</td>
   </tr>
        {% endfor %}
 </table>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Travelly Home</title>
-    <link rel="stylesheet" href="static/CSS/SearchResults.css">
+    <title>Travelly Results</title>
+    <link rel="stylesheet" href="/static/CSS/SearchResults.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@600&family=Ubuntu:ital@1&display=swap"
           rel="stylesheet">
@@ -24,7 +24,7 @@
     <nav class="navbar">
 
         <div class="navright">
-            <a href="{% url 'home-page' %}">Home</a>
+            <a href="placeholder">Home</a>
             <a href="placeholder">Flights available</a>
             <a href="placeholder">Flood warnings</a>
             <a href="placeholder">Register</a>
@@ -34,14 +34,13 @@
         <h1 class="#pageheading"> Travelly </h1>
 
     </nav>
+
     <div class="searchform">
 
         <h2>LET US SHOW YOU MORE ABOUT YOUR DESTINATION</h2>
-
-        <form class="TraverSearch" method="GET" action="{% url 'searchResults' %}">
-        <input type="search" id="fromInput" name="origin" value="{{ request.GET.origin }}" placeholder="Where are you flying from?"><br><br>
-        <input type="search" id="toInput" name="destination" value="{{ request.GET.destination }}" placeholder="Where are you flying to?"><br><br>
-
+        <form class="TraverSearch">
+        <input type="search" id="fromInput" placeholder="Where are you flying from?"><br><br>
+        <input type="search" id="toInput" placeholder="Where are you flying to?"><br><br>
         <input type="submit" id="SearchBtn" value="Search">
     </form>
 
@@ -51,15 +50,15 @@
 
 
 
-<div class="flightsEncountered">
+
 
 {% block content %}
 
 {% endblock %}
 
-</div>
 
-<script src="static/JSON/travelly.js"></script>
+
+<script src="/static/JSON/travelly.js"></script>
 </body>
 
 

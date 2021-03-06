@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import openMainPage
+from SearchResults.views import TravelPlan_display_results
 
 urlpatterns = [
+    path('', openMainPage, name='Home'),
     path('admin/', admin.site.urls),
-    path('', openMainPage,name='Home'),
-    path('resultspage/', openMainPage,name='results page'),
+    path('resultspage/', TravelPlan_display_results,name='results page'),
 ]
