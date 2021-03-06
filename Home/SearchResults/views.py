@@ -4,12 +4,13 @@ from .models import TravelPlan
 
 def TravelPlan_display_results(request, *args, **kwargs):
     obj=TravelPlan.objects.all
+    origin=request.GET.get('origin')
+    destination=request.GET.get('destination')
+    print(origin)
+    print(destination)
     context={
         'dbData':obj,
-        #'origin':obj.origin,
-        #'destination': obj.destination,
-        #'price': obj.price,
-        "arrays": [[399, "london"], [233, "manchester"], [233, "lisboa"], [233, "liverpool"]],
+        'origin': origin,
+        'destination': destination,
     }
-
     return render(request, "dispTravelsData.html",context)
