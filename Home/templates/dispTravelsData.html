@@ -1,0 +1,20 @@
+{% extends "SearchResults.html" %}
+
+{% block content %}
+
+   <table class="resultsTable" align="center">
+  <tr>
+    <th>Departure</th>
+    <th>Price</th>
+    <th>Arrival</th>
+  </tr>
+       {% for country in DBdata %}
+  <tr>
+    <td>{{origin}}</td>
+    <td>{{country.0}}£</td>
+    <td>{{country.1}}</td>
+  </tr>
+       {% endfor %}
+</table>
+
+{% endblock %}
