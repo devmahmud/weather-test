@@ -3,9 +3,9 @@ from .models import TravelPlan
 # Create your views here.
 
 def TravelPlan_display_results(request, *args, **kwargs):
-    obj=TravelPlan.objects.all
     origin=request.GET.get('origin')
     destination=request.GET.get('destination')
+    obj=TravelPlan.objects.filter(origin=origin, destination=destination)
     print(origin)
     print(destination)
     context={

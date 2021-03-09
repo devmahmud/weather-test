@@ -38,7 +38,7 @@
     <div class="searchform">
 
         <h2>LET US SHOW YOU MORE ABOUT YOUR DESTINATION</h2>
-        <form class="TraverSearch" method="GET" action="{% url 'results page' %}">
+        <form class="TravelSearch" method="GET" action="/resultspage/">
         <input type="search" id="fromInput" name="origin" value="{{ request.GET.origin }}" placeholder="Where are you flying from?"><br><br>
         <input type="search" id="toInput" name="destination" value="{{ request.GET.destination }}" placeholder="Where are you flying to?"><br><br>
         <input type="submit" id="SearchBtn" value="Search">
