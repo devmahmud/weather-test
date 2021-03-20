@@ -19,6 +19,7 @@ from django.urls import path
 from pages.views import openMainPage
 from SearchResults.views import TravelPlan_display_results
 
+
 urlpatterns = [
     path('', openMainPage, name='Home'),
     path('admin/', admin.site.urls),
