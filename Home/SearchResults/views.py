@@ -3,6 +3,7 @@ from .models import TravelPlan
 import requests
 import json
 from .APITarget.APIHandler import APIHandler
+
 # Create your views here.
 
 def TravelPlan_display_results(request, *args, **kwargs):
@@ -18,4 +19,4 @@ def TravelPlan_display_results(request, *args, **kwargs):
         'origin': origin,
         'destination': destination,
     }
-    return render(request, "dispTravelsData.html",context)
+    return render(request, "SearchResults.html",context)
