@@ -28,10 +28,8 @@ class APIHandler:
         self.destination = destination
         self.date = date
         self.num_adults = num_adults
-
-        self.get_data()
-
         self.data = None
+        self.get_data()
 
     def get_data(self):  # Method to contain the calls to different classes in the APITarget folder
         if self.requested_API in self.api_list:
