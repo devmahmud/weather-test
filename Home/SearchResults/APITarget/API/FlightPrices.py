@@ -39,6 +39,6 @@ class FlightPrices:
 
 
 if __name__ == "__main__":
-    api = FlightPrices('BHX', 'PAR', '2021-03-26', 1)
+    api = FlightPrices('MAN', 'OPO', '2021-05-27', 1)
     api.getData()
     api.modifyData()
