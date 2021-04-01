@@ -4,7 +4,35 @@
     <link rel="stylesheet" href="/static/CSS/SearchResults.css">
 {% endblock %}
 
+{% block searchForm %}
+        <h1 class="#pageheading"> Travelly </h1>
 
+    <div class="searchform">
+        <h2>LET US SHOW YOU MORE ABOUT YOUR DESTINATION</h2>
+    </div>
+
+    <form class="TravelSearch" method="GET" action="/resultspage/">
+        <input type="search" id="fromInput" name="origin" value="{{ request.GET.origin }}"
+               placeholder="Where are you flying from?"><br><br>
+        <input type="search" id="toInput" name="destination" value="{{ request.GET.destination }}"
+               placeholder="Where are you flying to?"><br><br>
+        <input type="date" id="travelDate" name="travelDate" value="{{ request.GET.travelDate }}">
+        <input type="submit" id="SearchBtn" value="Search" placeholder="Search">
+<!--
+     <select name="adultdropdown" id='option1'><-
+            <option value="Adult1" selected>1 Adult(s)</option>
+            <option value="Adult2" selected>2 Adult(s)</option>
+            <option value="Adult3" selected>3 Adult(s)</option>
+            <option value="Adult4" selected>4 Adult(s)</option>
+        </select><br/><br/>
+        <select name="currencydropdown" id='option2'>
+            <option value="EUR" selected>EUR</option>
+            <option value="GBP" selected>GBP</option>
+            <input type="submit" id="SearchBtn" value="Search" placeholder="Seasrch">
+        </select><br/>
+-->
+    </form>
+{% endblock %}
 
 {% block pageTitle %}
     <title>Search Results</title>

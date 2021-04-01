@@ -169,7 +169,7 @@ header{
 
 
  /* search bar height and width properties */
-  #toInput, #fromInput, #option1, #option2{
+  #toInput, #fromInput, #option1, #option2, #travelDate{
     height: 40px;
     width: 200px;
     background: rgba(0, 0, 0, 0);
@@ -178,7 +178,7 @@ header{
   #fromInput{
       border-radius:50px 2px 2px 50px;
   }
-  #option2{
+  #option2 , #travelDate{
       border-radius:2px 50px 50px 2px;
   }
   #toInput, #option{

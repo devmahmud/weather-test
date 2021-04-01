@@ -11,10 +11,12 @@ from django.core.exceptions import ObjectDoesNotExist
 def TravelPlan_display_results(request, *args, **kwargs):
     origin = request.GET.get('origin')
     destination = request.GET.get('destination')
+    travelDate = request.GET.get('travelDate')
     print("orig ", origin)
     print("dest ", destination)
-    api_Handler_data = APIHandler("FlightPrices", origin=origin, destination=destination).data
-    # print(json.loads(api_Handler_data))
+    print("date ", travelDate)
+    api_Handler_data = APIHandler("FlightPrices", origin=origin, destination=destination, date=travelDate).data
+    print(json.loads(api_Handler_data))
     apiGetData = json.loads(api_Handler_data)
     for i in apiGetData:
         print(i['id'])
