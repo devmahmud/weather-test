@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 75,
+        "lat": 25
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 302.08,
+        "feels_like": 298.71,
+        "temp_min": 302.08,
+        "temp_max": 302.08,
+        "pressure": 1011,
+        "humidity": 17,
+        "sea_level": 1011,
+        "grnd_level": 965
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 2.29,
+        "deg": 216,
+        "gust": 2.91
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1615555168,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1615511544,
+        "sunset": 1615554441
+    },
+    "timezone": 19800,
+    "id": 1276615,
+    "name": "Beg\u016bn",
+    "cod": 200
+}

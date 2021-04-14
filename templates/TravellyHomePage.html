@@ -1,0 +1,88 @@
+{% extends 'defaultPageLayout.html' %}
+
+{% block cssDirectory %}
+    <link rel="stylesheet" href="/static/CSS/travellyMain.css">
+{% endblock %}
+
+{% block searchForm %}
+        <h1 class="#pageheading"> Travelly </h1>
+
+    <div class="searchform">
+        <h2>LET US SHOW YOU MORE ABOUT YOUR DESTINATION</h2>
+    </div>
+
+    <form class="TravelSearch" method="GET" action="/resultspage/">
+        <input type="search" id="fromInput" name="origin" value="{{ request.GET.origin }}"
+               placeholder="Where are you flying from?"><br><br>
+        <input type="search" id="toInput" name="destination" value="{{ request.GET.destination }}"
+               placeholder="Where are you flying to?"><br><br>
+        <input type="date" id="travelDate" name="travelDate" value="{{ request.GET.travelDate }}">
+        <input type="submit" id="SearchBtn" value="Search" placeholder="Search">
+<!--
+     <select name="adultdropdown" id='option1'><-
+            <option value="Adult1" selected>1 Adult(s)</option>
+            <option value="Adult2" selected>2 Adult(s)</option>
+            <option value="Adult3" selected>3 Adult(s)</option>
+            <option value="Adult4" selected>4 Adult(s)</option>
+        </select><br/><br/>
+        <select name="currencydropdown" id='option2'>
+            <option value="EUR" selected>EUR</option>
+            <option value="GBP" selected>GBP</option>
+            <input type="submit" id="SearchBtn" value="Search" placeholder="Seasrch">
+        </select><br/>
+-->
+    </form>
+{% endblock %}
+
+{% block pageTitle %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block content %}
+<div class="aboutus">
+    <h3>Who Are we?</h3><br>
+    <img src="/static/CSS/images/imgpsh_fullsize.jfif" alt="about image" width="650" height="700" align="left" style="padding-left:15%" >
+
+    <p class="about">Founded in February of 2021,
+        Travelly is a free<br> service that aims
+        to get you to your perfect<br> destination where
+        you can avoid places abroad <br>that may be bad for travel.
+        Travelly connects<br> travellers to great travel experiences
+        at <br> great value price points.<br><br>It can be somewhat tiresome
+        monitoring weather <br> conditions and flights to ensure your time abroad<br>
+        is not just productive but a smooth process.<br><br> Value is a key quality
+        we take seriously because<br> we want you to find the best value for
+        flight<br> prices for your destination - we just concentrate<br> on what matters:<br><br>
+        <h4 style="padding-left:50%">Great flight prices + Great weather = Value</h4>
+    </p>
+    </p>
+</div>
+
+<div class="meetteam" >
+    <h2 id="meetteamheading" style="padding-right:40%"> TEAM IBEX</h2>
+    <div style="float: left; padding: 2%; border-right: 1px solid #eab498;">
+        <h5 style="margin-bottom:0;">Arthur Costa</h5>
+        <p> Computer Hardware <br>and software engineering</p><br>
+        <h5>Awais Mahmood</h5>
+        <p> Information Technology with Business</p>
+    </div>
+    <div style="float: left; padding: 2%; border-right: 1px solid #eab498;">
+        <h5 style="margin-bottom:0;">Kailand Wu</h5>
+        <p> Informatics </p><br>
+        <h5 style="margin-bottom:0;">Claire Egorp</h5>
+        <p> Computer Hardware <br>and software engineering</p>
+    </div>
+    <div style="float: left; padding: 2%; border-right: 1px solid #eab498;">
+        <h5 style="margin-bottom:0;">Joy Edosa</h5>
+        <p> Information Technology with Business </p><br>
+        <h5 style="margin-bottom:0;">Dev Singh</h5>
+        <p> Mathematics & Data Analytics </p>
+    </div>
+    <div style="float: left; padding: 2%;">
+        <h5 style="margin-bottom:0;">Conner Meeson</h5>
+        <p> Computer Hardware <br>and software engineering</p><br>
+        <h5 style="margin-bottom:0;">Ibukunoluwa Adegoke</h5>
+        <p> Computer Science</p>
+    </div>
+</div>
+{% endblock %}

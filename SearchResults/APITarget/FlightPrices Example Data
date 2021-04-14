@@ -1,0 +1,97 @@
+Flight Prices:
+
+    {
+        "type": "flight-offer",
+        "id": "1",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-26",
+        "numberOfBookableSeats": 3,
+        "itineraries": [
+            {
+                "duration": "PT1H25M",
+                "segments": [
+                    {
+                        "departure": {
+                            "iataCode": "BHX",
+                            "at": "2021-03-26T10:55:00"
+                        },
+                        "arrival": {
+                            "iataCode": "CDG",
+                            "terminal": "2E",
+                            "at": "2021-03-26T13:20:00"
+                        },
+                        "carrierCode": "AF",
+                        "number": "1165",
+                        "aircraft": {
+                            "code": "E90"
+                        },
+                        "operating": {
+                            "carrierCode": "A5"
+                        },
+                        "duration": "PT1H25M",
+                        "id": "46",
+                        "numberOfStops": 0,
+                        "blacklistedInEU": false
+                    }
+                ]
+            }
+        ],
+        "price": {
+            "currency": "EUR",
+            "total": "116.31",
+            "base": "69.00",
+            "fees": [
+                {
+                    "amount": "0.00",
+                    "type": "SUPPLIER"
+                },
+                {
+                    "amount": "0.00",
+                    "type": "TICKETING"
+                }
+            ],
+            "grandTotal": "116.31",
+            "additionalServices": [
+                {
+                    "amount": "25.00",
+                    "type": "CHECKED_BAGS"
+                }
+            ]
+        },
+        "pricingOptions": {
+            "fareType": [
+                "PUBLISHED"
+            ],
+            "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+            "AF"
+        ],
+        "travelerPricings": [
+            {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                    "currency": "EUR",
+                    "total": "116.31",
+                    "base": "69.00"
+                },
+                "fareDetailsBySegment": [
+                    {
+                        "segmentId": "46",
+                        "cabin": "ECONOMY",
+                        "fareBasis": "RS50BBLG",
+                        "brandedFare": "LIGHT2",
+                        "class": "R",
+                        "includedCheckedBags": {
+                            "quantity": 0
+                        }
+                    }
+                ]
+            }
+        ]
+    },

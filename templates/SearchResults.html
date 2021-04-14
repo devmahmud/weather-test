@@ -1,0 +1,72 @@
+{% extends 'defaultPageLayout.html' %}
+
+{% block cssDirectory %}
+<link href="/static/CSS/SearchResults.css" rel="stylesheet">
+{% endblock %}
+
+{% block searchForm %}
+<h1 class="#pageheading"> Travelly </h1>
+
+<div class="searchform">
+    <h2>LET US SHOW YOU MORE ABOUT YOUR DESTINATION</h2>
+</div>
+
+<form action="/resultspage/" class="TravelSearch" method="GET">
+    <input id="fromInput" name="origin" placeholder="Where are you flying from?" type="search"
+           value="{{ request.GET.origin }}"><br><br>
+    <input id="toInput" name="destination" placeholder="Where are you flying to?" type="search"
+           value="{{ request.GET.destination }}"><br><br>
+    <input id="travelDate" name="travelDate" type="date" value="{{ request.GET.travelDate }}">
+    <input id="SearchBtn" placeholder="Search" type="submit" value="Search">
+    <!--
+         <select name="adultdropdown" id='option1'><-
+                <option value="Adult1" selected>1 Adult(s)</option>
+                <option value="Adult2" selected>2 Adult(s)</option>
+                <option value="Adult3" selected>3 Adult(s)</option>
+                <option value="Adult4" selected>4 Adult(s)</option>
+            </select><br/><br/>
+            <select name="currencydropdown" id='option2'>
+                <option value="EUR" selected>EUR</option>
+                <option value="GBP" selected>GBP</option>
+                <input type="submit" id="SearchBtn" value="Search" placeholder="Seasrch">
+            </select><br/>
+    -->
+</form>
+{% endblock %}
+
+{% block pageTitle %}
+<title>Search Results</title>
+{% endblock %}
+
+{% block content %}
+<table align="center" class="resultsTable">
+    <tr>
+        <th>Departure</th>
+        <th>Price</th>
+        <th>Arrival</th>
+    </tr>
+    {% for value in dbData %}
+    <tr>
+        <td>{{value.origin}}</td>
+
+        <td>{{value.price}}£</td>
+
+        <td>{{value.destination}}</td>
+    </tr>
+    <tr style="background-color:green">
+        <td>
+            {% for originItinerary in value.travelOrigins %}
+            {{originItinerary}}<br/>
+            {% endfor %}
+        </td>
+        <td></td>
+        <td>
+            {% for destinationItinerary in value.travelDestination %}
+            {{destinationItinerary}} <br/>
+            {% endfor %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
