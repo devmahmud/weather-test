@@ -10,6 +10,7 @@ class SearchResultsTests(TestCase):
     def setUp(self):
         self.origin = 'MAN'
         self.destination = 'OPO'
+        self.travelDate = "2021-10-04"
 
     def test_travelplan_display(self):
         """
@@ -17,7 +18,7 @@ class SearchResultsTests(TestCase):
         """
 
         response = self.client.get(
-            "/resultspage/?origin=MAN&destination=OPO&travelDate=2021-10-04")
+            f"/resultspage/?origin={self.origin}&destination={self.destination}&travelDate={self.travelDate}")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'SearchResults.html')
 
