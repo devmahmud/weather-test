@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.urls import reverse
 
 
 class PagesViewTests(TestCase):
@@ -13,5 +12,5 @@ class PagesViewTests(TestCase):
         """
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'Blog Posts')
-        self.assertTemplateUsed(response, 'blog/post-list.html')
+        self.assertContains(response, 'Travelly')
+        self.assertTemplateUsed(response, 'TravellyHomePage.html')
