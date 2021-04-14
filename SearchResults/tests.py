@@ -7,14 +7,17 @@ class SearchResultsTests(TestCase):
     Test class for Search Results
     """
 
-    # def test_travelplan_display(self):
-    #     """
-    #     Test travelpan display result
-    #     """
-    #     response = self.client.get(
-    #         "/resultspage/?origin=DHAKA&destination=USA&travelDate=2020-10-04")
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'SearchResults.html')
+    def test_travelplan_display(self):
+        """
+        Test travelpan display result
+        """
+        response = self.client.get(
+            "/resultspage/?origin=DHAKA&destination=USA&travelDate=2020-10-04")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'SearchResults.html')
+        self.assertIsInstance(response.context['dbData'], TravelPlan)
+        self.assertEqual(response.context['origin'], 'DHAKA')
+        self.assertEqual(response.context['destination'], 'USA')
 
     def test_travelplan_model(self):
         """
