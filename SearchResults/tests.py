@@ -7,29 +7,37 @@ class SearchResultsTests(TestCase):
     Test class for Search Results
     """
 
+    def setUp(self):
+        self.origin = 'MAN'
+        self.destination = 'OPO'
+
     def test_travelplan_display(self):
         """
         Test travelpan display result
         """
+
         response = self.client.get(
-            "/resultspage/?origin=DHAKA&destination=USA&travelDate=2020-10-04")
+            "/resultspage/?origin=MAN&destination=OPO&travelDate=2021-10-04")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'SearchResults.html')
-        self.assertIsInstance(response.context['dbData'], TravelPlan)
-        self.assertEqual(response.context['origin'], 'DHAKA')
-        self.assertEqual(response.context['destination'], 'USA')
+
+        self.assertCountEqual(response.context['dbData'], TravelPlan.objects.filter(
+            origin=self.origin, destination=self.destination))
+
+        self.assertEqual(response.context['origin'], self.origin)
+        self.assertEqual(response.context['destination'], self.destination)
 
     def test_travelplan_model(self):
         """
         Test TravelPlan model
         """
         obj = TravelPlan.objects.create(
-            origin="CANADA", destination="AUSTRALIA", price=200, travelOrigins=["orgin1", "origin2"],
+            origin=self.origin, destination=self.destination, price=200, travelOrigins=["orgin1", "origin2"],
             travelDestination=['destination1', 'destination2']
         )
-        self.assertEqual(obj.id, 1)
-        self.assertEqual(obj.origin, 'CANADA')
-        self.assertEqual(obj.destination, 'AUSTRALIA')
+        self.assertIsNotNone(obj.id)
+        self.assertEqual(obj.origin, self.origin)
+        self.assertEqual(obj.destination, self.destination)
         self.assertEqual(obj.price, 200)
         self.assertEqual(obj.travelOrigins, ["orgin1", "origin2"])
         self.assertEqual(obj.travelDestination, [
